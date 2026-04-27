@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  bbhunter:
+    build: .
+    image: bbhunter:latest
+    container_name: bbhunter
+    volumes:
+      # Output lands on the host at ./output/
+      - ./output:/output
+      # Persist tool registry across runs
+      - bbhunter-config:/root/.bbhunter
+    # Override CMD at runtime:
+    #   docker compose run bbhunter -u example.com
+    #   docker compose run bbhunter --list-tools
+    command: ["--help"]
+
+volumes:
+  bbhunter-config:

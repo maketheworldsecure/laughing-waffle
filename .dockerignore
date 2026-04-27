@@ -1,0 +1,10 @@
+output/
+bbhunter_output/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.env
+*.pdf
+*.txt
+!requirements.txt
